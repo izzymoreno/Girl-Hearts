@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>Привет ! Я - твоя душа и я тебя очень люблю ...</TITLE>
+</HEAD>
+<BODY bgcolor=black onload="init()" bgcolor=white ondragstart="JavaScript: return false" onselectstart="JavaScript: return false">
+<IMG STYLE="position: absolute; cursor: hand; Left=0; Top=0" name='Girl' src='Images/Girl.gif' title='Девчёнка' onclick='alert("Fucking Error ! Access denied ... Connection failed.")'>
+<IMG STYLE="position: absolute; Left=0; Top=0" name='FullMoon' src='Images/FullMoon.gif' title='Полнолуние'>
+
+<SCRIPT language="JavaScript">
+
+maxhearts=200;
+objnum=0;
+timer1=1;
+Resize();
+DirFileName=new Array("Heart1","Heart2");
+CreateHearts();
+alert('Скрипт выполнился');
+
+function init()
+{
+setTimeout("MakeCoordinats()",timer1);
+}
+
+function CreateHearts()
+{
+for (i=objnum; i<=maxhearts; i=i+1)
+   {
+   if(i%2==0)
+      {
+      DivLeft=xminbrowser+Math.round(Math.random()*xmaxbrowser);
+      DivTop=yminbrowser+Math.round(Math.random()*ymaxbrowser);
+      ApiImageHTML="<DIV id='picheart"+i+"' STYLE='position: absolute; left="+DivLeft+"; top="+DivTop+"'>"+
+      "<IMG name='heart"+i+"' src='Images/"+DirFileName[0]+".gif'>"+
+      "</DIV>";      
+      document.write(ApiImageHTML);
+      }
+      else     
+      {
+      DivLeft=xminbrowser+Math.round(Math.random()*xmaxbrowser);
+      DivTop=yminbrowser+Math.round(Math.random()*ymaxbrowser);
+      ApiImageHTML="<DIV id='picheart"+i+"' STYLE='position: absolute; left="+DivLeft+"; top="+DivTop+"'>"+
+      "<IMG name='heart"+i+"' src='Images/"+DirFileName[0]+".gif'>"+
+      "</DIV>";      
+      document.write(ApiImageHTML);
+      }
+   }
+}
+
+function MakeCoordinats()
+{
+document.all["picheart"+objnum].style.left=xminbrowser+Math.round(Math.random()*xmaxbrowser);
+document.all["picheart"+objnum].style.top=yminbrowser+Math.round(Math.random()*ymaxbrowser);
+objnum++;
+if(objnum>maxhearts){objnum=0};
+setTimeout("MakeCoordinats()",timer1);
+}
+
+function Resize()
+{
+xminbrowser=0;
+xmaxbrowser=document.body.clientWidth-11;
+yminbrowser=0;
+ymaxbrowser=document.body.clientHeight-11;
+}
+
+</SCRIPT>
+<DIV id=txt1 STYLE="position: relative; left: 360px; top: -15px; color: white"><FONT face='Lucida' size=3><B><IMG name='Gerb' src='Images\Pacifist.gif'>Cracked by Izzyaslav Megabredov Copyright 2005&#169<IMG name='Gerb' 
+src='Images\Pacifist.gif'><B/></DIV>
+</BODY>
+</HTML>
